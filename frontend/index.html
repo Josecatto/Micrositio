@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Micrositio - Hoja de Vida</title>
+  <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+  <header class="site-header">
+    <h1>Hoja de Vida - Jose Navia</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="catalogo.html">Catálogo</a>
+      <a href="contacto.html">Contacto</a>
+      <a href="mapa.html">Mapa</a>
+      <a href="ia.html">Sección Inteligente</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section id="perfil">
+      <div style="display:flex; gap:1rem; align-items:center;">
+        <img id="foto-perfil" src="images/yo1.jpg" alt="foto perfil" style="width:150px; height:150px; object-fit:cover;">
+        <div>
+          <h2>Jose Adalber Navia Torrico</h2>
+          <p>Un estudiante de Ingeniería de Software, me interesa el uso delas Inteligencias Artificiales y hago uso de ellas para lograr objetivos (como este sitio, por ejemplo).</p>
+          <p><strong>Skills:</strong> JavaScript · HTML · CSS · Python · FastAPI · LibreSprite · Java </p>
+        </div>
+      </div>
+    </section>
+
+    <section style="margin-top:1rem;">
+      <h3>Proyectos destacados</h3>
+      <div class="grid">
+        <div class="card">
+          <img src="images/pez.jpg" alt="Imagen del modelo de pez en un spriteSheet">
+          <h4>Sprites para jeugo</h4>
+          <p>Animaciones de Sprites para un juego básico</p>
+        </div>
+        <div class="card">
+          <img src="images/figma.jpg" alt="Imagen del modelo de una App en Figma">
+          <h4>Modelo en Figma de App</h4>
+          <p>un figma hecho para un apalicación de matemáticas</p>
+        </div>
+        <div class="card">
+          <img src="images/planetas.jpg" alt="Imagen del proyecto de planetas">
+          <h4>planetas de DB</h4>
+          <p>una web usando API en el que aparecen los planetas de todo dragonball</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>Micrositio - Proyecto de curso · Hecho con FastAPI y JavaScript</p>
+  </footer>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const fotos = ["images/yo1.jpg", "images/yo2.jpg"];
+    const img = document.getElementById("foto-perfil");
+    let i = 0;
+
+    setInterval(() => {
+      img.style.opacity = 0; // fade out
+      setTimeout(() => {
+        i = (i + 1) % fotos.length;
+        img.src = fotos[i];
+        img.style.opacity = 1; // fade in
+      }, 1000);
+    }, 4000);
+  });
+</script>
+
+
+</body>
+</html>
